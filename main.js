@@ -31,7 +31,7 @@ q(2,
   'New value you should add is 100.');
 
 function a2(x, y) {
-    if (((!x) || !Array.isArray(x)) || (!Number.isInteger(y))) {
+    if (((!x) || !Array.isArray(x)) || (typeof y != 'number')) {
         return;
     }
     
@@ -60,8 +60,8 @@ function a4(first, last) {
     var sum = 0;
     var ok =(first &&
              last &&
-             Number.isInteger(first) &&
-             Number.isInteger(last) &&
+             typeof first != 'number' && 
+             typeof last != 'number' &&
              (first <= last));
     if (ok) {
         for (var i = first; i <= last; i++) {
@@ -84,7 +84,7 @@ function a5(x) {
     }
     var minium;
     for (var i = 0; i < x.length; i++) {
-        if (x[i] && Number.isInteger(x[i])) {
+        if (x[i] && (typeof x[i] == 'number')) {
             if ((minium > x[i]) || (!minium)) {
                 minium = x[i];
             }
@@ -108,7 +108,7 @@ function a6(x) {
     var average;
     var size = 0;
     for (var i = 0; i < x.length; i++) {
-        if ((x[i] || (x[i] == 0)) && Number.isInteger(x[i])) {
+        if ((x[i] || (x[i] == 0)) && (typeof x[i] == 'number')) {
             if (!average) {
                 average = 0;
             }

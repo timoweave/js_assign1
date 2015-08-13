@@ -16,12 +16,13 @@ function a1(x) {
     if ((!x) || !Array.isArray(x)) {
         return;
     }
-    
-    for (var i = 0; i < x.length; i++ ) {
-        console.log('x[' + i + '] = ' + x[i]);
-    }
+    var text = "";
+    for (var i = 0; i < x.length; i++ ) { 
+        text += 'x[' + i + '] = ' + x[i] + '\n';
+    } 
+    return text;
 }
-a1([3, 5, 'Dojo', 'rocks', 'Michael', 'Sensei']);
+console.log(a1([3, 5, 'Dojo', 'rocks', 'Michael', 'Sensei']));
 
 
 /////////////////////////////////////////////////////////

@@ -56,7 +56,7 @@ q(4,
   'Create a simple for loop that sums all the numbers ' +
   'between 1 to 500. Have console log the final sum.');
 
-function a4(first, last) {
+function a4(first, last) { // standalone function
     var sum = 0;
     var ok =(first &&
              last &&
@@ -78,7 +78,7 @@ q(5,
   'Write a loop that will go through the array ' +
   '[1, 5, 90, 25, -3, 0], find the minimum value, and then print it');
 
-function a5(x) {
+var a5 = function(x) { // annoymous function
     if ((!x) || !Array.isArray(x)) {
         return;
     }
@@ -100,28 +100,29 @@ q(6,
   '[1, 5, 90, 25, -3, 0], find the average of all of the values, ' +
   'and then print it');
 
-function a6(x) {
-    if ((!x) || !Array.isArray(x)) {
-        return;
-    }
-
-    var average;
-    var size = 0;
-    for (var i = 0; i < x.length; i++) {
-        if ((x[i] || (x[i] == 0)) && (typeof x[i] == 'number')) {
-            if (!average) {
-                average = 0;
-            }
-            average += x[i];
-            size++;
-        }
-    }
-    if (size > 0) {
-        average = average / size;
-    }
-    return average;
-}
-console.log('avg = ' + a6([1, 5, 90, 25, -3, 0]) + ' (ans = 19.67)'); 
+var a6 = {
+    avg : function(x) { // method
+        if ((!x) || !Array.isArray(x)) {
+            return;
+        } 
+        var average;
+        var size = 0;
+        for (var i = 0; i < x.length; i++) {
+            if ((x[i] || (x[i] == 0)) && (typeof x[i] == 'number')) {
+                if (!average) {
+                    average = 0;
+                } 
+                average += x[i] ;
+                size++ ;
+            } 
+        } 
+        if (size > 0) {
+            average = average / size;
+        } 
+        return average;
+    } 
+} 
+console.log('avg = ' + a6.avg([1, 5, 90, 25, -3, 0]) + ' (ans = 19.67)'); 
 
 
 
